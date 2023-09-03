@@ -1,33 +1,44 @@
-const tituloComEfeito = document.querySelector('.efeito-digitacao');
+const primeiroTitulo = document.getElementById("first-title");
+const segundoTitulo = document.getElementById("second-title");
 
-const textoNoDataValue = document.querySelector('.efeito-pontinhos').getAttribute('data-value');
-const tituloComEfeitoPontinhos = document.querySelector('.efeito-pontinhos');
+digitarTexto(primeiroTitulo, "Faltam");
 
-const pontinhos = "...";
+var titulosDigitados = primeiroTitulo.textContent.length == 6 && segundoTitulo.textContent.length == 16; 
 
-const atraso = 500;
+console.log(titulosDigitados)
 
-var contadorDeLetras = 0;
 
-digitarTexto();
+function digitarTexto(elemento, texto) {
+    let i = 0;
 
-function digitarTexto() {
-
-    if (contadorDeLetras < textoNoDataValue.length) {
-        tituloComEfeito.textContent += textoNoDataValue.charAt(contadorDeLetras);
-        contadorDeLetras++;
-        setTimeout(digitarTexto, 200);
-    } else {    
-        digitarPontinhos()
-    }
+    const intervalo = setInterval(() => {
+        if (i < texto.length) {
+            elemento.textContent += texto.charAt(i);
+            i++;
+        } else {
+            clearInterval(intervalo);
+            
+            if (segundoTitulo.textContent.length < "pra gente se ver".length) {
+                digitarTexto(segundoTitulo, "pra gente se ver");
+            }
+            
+            let titulosDigitados = segundoTitulo.textContent.length == "pra gente se ver".length;
+            
+            if (titulosDigitados) {
+                verificarString();
+            }
+        }
+    }, 100);
 }
 
-var digitar = true 
-var apagar = false
-var i = 0
+const pontinhos = "...";
+const atraso = 500;
 
-function verificarTamanhoDaString() {
-    
+var digitar = true;
+var apagar = false;
+var contador = 0;
+
+function verificarString() {
     if (digitar) {
         setTimeout(digitarPontinhos, atraso)
     }
@@ -36,33 +47,32 @@ function verificarTamanhoDaString() {
     }
 }
 
-function apagarPontinhos() {
+function digitarPontinhos() {
+    segundoTitulo.textContent += pontinhos.charAt();
 
-    let texto = tituloComEfeitoPontinhos.textContent;
+    contador++;
+
+    if (contador == 3) {
+        apagar = true;
+        digitar = false;
+    }
+
+    verificarString();
+}
+
+function apagarPontinhos() {
     let numeroDeCaracteresApagados = 1;
 
-    let novoTexto = texto.slice(0, -numeroDeCaracteresApagados);
+    let texto2 = segundoTitulo.textContent.slice(0, -numeroDeCaracteresApagados);
 
-    tituloComEfeitoPontinhos.textContent = novoTexto;
+    segundoTitulo.textContent = texto2;
 
-    i--;
+    contador--;
         
-    if (i == 0) {
+    if (contador == 0) {
         apagar = false
         digitar = true
     }
 
-    verificarTamanhoDaString();
-}
-
-function digitarPontinhos() {
-    tituloComEfeitoPontinhos.textContent += pontinhos.charAt();
-    i++;
-
-    if (i == 3) {
-        apagar = true
-        digitar = false
-    }
-
-    verificarTamanhoDaString();
+    verificarString();
 }
