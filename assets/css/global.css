@@ -4,15 +4,13 @@
 @import './global.css';
 @import './banner.css';
 @import './grid.css';
+@import './screen.css';
 
 @font-face {
     font-family: 'digital-led';
     src: url('../fonts/digital-7.ttf') format('woff2');
 }
 
-.gradient {
-    background-image: linear-gradient(#000000, #f11b1b);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+main {
+    padding: 0 0 40px 0;
 }

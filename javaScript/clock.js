@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
                 elemento.textContent = valores[indice];
             });
-            console.log("Função atualizarRelogio foi chamada");
+            /* console.log("Função atualizarRelogio foi chamada"); */
         }
         atualizarRelogio()
         setInterval(atualizarRelogio, 1000);
