@@ -1,6 +1,7 @@
 @media screen and (max-width: 600px) {
     .main {
         margin: 0 auto;
+        padding-bottom: 40px;
     }
 
     .container__main,
@@ -9,8 +10,8 @@
     }
 
     .banner {
-        width: 440px;
-        padding: 40px 0;
+        width: 360px;
+        padding: 60px 0;
         margin: 0 auto;
         display: flex;
         flex-direction: column;

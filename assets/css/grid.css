@@ -1,11 +1,11 @@
 @media screen and (max-width: 600px) {
     .container__main {
-        width: 440px;
+        width: 340px;;
         margin: 0 auto;
         display: grid;
         row-gap: 15px;
-        grid-template-rows: 400px 350px 530px 630px 350px 600px auto;
-        grid-template-columns: 440px;
+        grid-template-rows: 400px 350px 530px 490px 310px 515px auto;
+        grid-template-columns: 340px;;
     }
 
     .container__main img,
