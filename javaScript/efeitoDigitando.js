@@ -76,3 +76,18 @@ function apagarPontinhos() {
 
     verificarString();
 }
+
+const botaoEspecial = document.getElementById('button-special');
+const textoEspecial = document.getElementById('special-text');
+const imgEspecial = document.getElementById('special-img');
+
+var verificacao = false;
+
+botaoEspecial.addEventListener('click', () => {
+    if (!verificacao) {
+        botaoEspecial.classList.add('sumiu');
+        digitarTexto(textoEspecial, 'Meu amor por você é do tamanho do seu peitão');
+        imgEspecial.classList.remove('sumiu')
+        verificacao = true;
+    }
+});

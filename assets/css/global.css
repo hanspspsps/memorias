@@ -10,7 +10,113 @@
     src: url('../fonts/digital-7.ttf') format('woff2');
 }
 
+@font-face {
+    font-family: 'special';
+    src: url('../fonts/Super-Boys.ttf') format('woff2');
+}
+
 main {
-    padding-bottom: 40px;
     font-family: 'Jost', sans-serif;
+}
+
+.sumiu {
+    display: none;
+}
+
+.especial {
+    width: 980px;
+    padding: 40px 0 0 0;
+    margin:  0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-special {
+    width: 350px;
+    height: 90px;
+    margin: 40px 0 20px 0;
+    background: linear-gradient(to bottom, #b62917, #a11414);
+    border-radius: 10px;
+    border: none;
+    font-size: 40px;
+}
+
+.special-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.special-text {
+    width: 650px;
+    font-size: 60px;
+    font-family: 'special', sans-serif;
+    color: #a11414;
+    text-align: center;
+}
+
+.special-container div {
+    width: 200px;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.special-container img {
+    width: 150px;
+    height: auto;
+    animation: scaleAnimation 3s infinite alternate;
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.3);
+    }
+}
+
+@media screen and (min-width: 751px)  {
+    .especial {
+        width: 720px;
+    }
+
+    .special-text {
+        width: 450px;
+        font-size: 40px;
+    }
+    
+    .special-container div {
+        width: 200px;
+        height: 210px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .especial {
+        width: 340px;
+    }
+
+    .button-special {
+        margin: 0;
+    }
+
+    .special-container {
+        flex-direction: column;
+    }
+
+    .special-text {
+        width: 320px;
+        height: 70px;
+        font-size: 30px;
+    }
+    
+    .special-container div {
+        width: 200px;
+        height: 210px;
+    }
 }
