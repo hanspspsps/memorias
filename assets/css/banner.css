@@ -11,6 +11,7 @@
 
     .banner {
         width: 360px;
+        height: 325px;
         margin: 0 auto;
         padding: 60px 0;
         display: flex;
